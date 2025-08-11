@@ -1,0 +1,355 @@
+<div class="charsheet">
+
+  <!-- ==================== INFOS ==================== -->
+  <div class="sheet-infos">
+    <div class="sheet-ligne">
+      <label>Nom
+        <input type="text" name="attr_nom">
+      </label>
+      <label>Âge
+        <input type="text" name="attr_age">
+      </label>
+      <label>Sexe
+        <select name="attr_sexe">
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="sheet-ligne">
+      <label>Classe
+        <select name="attr_classe">
+          <option value="">---</option>
+          <option>Barbare</option><option>Barde</option><option>Clerc</option>
+          <option>Druide</option><option>Ensorceleur</option><option>Guerrier</option>
+          <option>Magicien</option><option>Moine</option><option>Occultiste</option>
+          <option>Paladin</option><option>Rôdeur</option><option>Roublard</option>
+          <option>Alchimiste</option><option>Antipaladin</option><option>Chasseur de Vampire</option>
+          <option>Chevalier</option><option>Conjurateur</option><option>Inquisiteur</option>
+          <option>Justicier</option><option>Magus</option><option>Ninja</option>
+          <option>Pistolier</option><option>Samouraï</option><option>Sorcière</option>
+        </select>
+      </label>
+      <label>Expérience
+        <input type="number" name="attr_experience" min="0" value="0">
+      </label>
+      <label>Taille
+        <input type="text" name="attr_taille">
+      </label>
+    </div>
+
+    <div class="sheet-ligne">
+      <label>Niveau
+        <select name="attr_niveau">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+          <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+        </select>
+      </label>
+
+      <label>Alignement
+        <select name="attr_alignement">
+          <option>Bon Loyal</option><option>Bon Neutre</option><option>Bon Chaotique</option>
+          <option>Neutre Bon</option><option>Neutre</option><option>Neutre Chaotique</option>
+          <option>Mauvais Bon</option><option>Mauvais Neutre</option><option>Mauvais Chaotique</option>
+        </select>
+      </label>
+
+      <label>Race
+        <select name="attr_race">
+          <option>Humain</option><option>Haut Elfe</option><option>Elfe des Bois</option><option>Elfe Noir</option>
+          <option>Nain</option><option>Nain Gris</option><option>Tieflin</option><option>Halflin</option>
+          <option>Demi-Orc</option><option>Aasimar</option><option>Changeling</option><option>Goliath</option>
+          <option>Orc</option><option>Homme-Serpent</option><option>Homme-Dragon</option><option>Forgé De Guerre</option>
+          <option>Autre</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <!-- ==================== STATS ==================== -->
+  <div class="sheet-stats-container">
+    <div class="sheet-stats-block">
+      <label>Points de Vie
+        <input type="number" name="attr_pv" value="floor(@{vigueur}*12.8)" disabled>
+      </label>
+      <label>Points de Magie
+        <input type="number" name="attr_pm" value="@{volonte}*10" disabled>
+      </label>
+      <label>Points de Vigueur
+        <input type="number" name="attr_vigueur_points" value="(@{vigueur}*10)+floor((@{force}*10)*0.8)" disabled>
+      </label>
+    </div>
+
+    <div class="sheet-stats-block">
+      <label>CA
+        <select name="attr_ca">
+          <option>0</option><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+          <option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
+          <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option>
+        </select>
+      </label>
+
+      <label>Bonus de Maîtrise
+        <select name="attr_bonus_maitrise">
+          <option>1</option><option selected>2</option><option>3</option><option>4</option>
+        </select>
+      </label>
+
+      <label>Bonus Temporaire
+        <input type="number" name="attr_bonus_temporaire" value="0">
+      </label>
+    </div>
+  </div>
+
+  <!-- ==================== ATTRIBUTS ==================== -->
+  <div class="section-title">Attributs</div>
+
+  <div class="sheet-attributs">
+    <!-- Physique -->
+    <div class="sheet-colonne-physique bloc-physique">
+      <h3>Physique</h3>
+      <label>Force
+        <select name="attr_force"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Dextérité
+        <select name="attr_dexterite"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Vigueur
+        <select name="attr_vigueur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+    </div>
+
+    <!-- Social -->
+    <div class="sheet-colonne-social bloc-social">
+      <h3>Social</h3>
+      <label>Charisme
+        <select name="attr_charisme"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Manipulation
+        <select name="attr_manipulation"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Sang-Froid
+        <select name="attr_sangfroid"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+    </div>
+
+    <!-- Mental -->
+    <div class="sheet-colonne-mental bloc-mental">
+      <h3>Mental</h3>
+      <label>Intelligence
+        <select name="attr_intelligence"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Astuce
+        <select name="attr_astuce"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <label>Volonté
+        <select name="attr_volonte"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+    </div>
+  </div>
+
+  <!-- ==================== COMPÉTENCES ==================== -->
+  <div class="section-competences">
+    <div class="section-title">Compétences</div>
+
+    <!-- Helpers requêtes Roll20 réutilisables -->
+    <input type="hidden" name="attr_q_attr_val" value="?{Attribut| Force,@{force}| Dextérité,@{dexterite}| Vigueur,@{vigueur}| Charisme,@{charisme}| Manipulation,@{manipulation}| Sang-Froid,@{sangfroid}| Intelligence,@{intelligence}| Astuce,@{astuce}| Volonté,@{volonte}}">
+    <input type="hidden" name="attr_q_attr_label" value="?{Attribut| Force,Force| Dextérité,Dextérité| Vigueur,Vigueur| Charisme,Charisme| Manipulation,Manipulation| Sang-Froid,Sang-Froid| Intelligence,Intelligence| Astuce,Astuce| Volonté,Volonté}">
+
+    <!-- ===== Physique ===== -->
+    <div class="skill-block competence-physique">
+      <h3>Physique</h3>
+
+      <div class="skill-row"><span>Artisanat</span>
+        <select name="attr_artisanat"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_artisanat" value="&{template:default} {{name=Jet Artisanat}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{artisanat}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{artisanat} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Athlétisme</span>
+        <select name="attr_athletisme"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_athletisme" value="&{template:default} {{name=Jet Athlétisme}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{athletisme}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{athletisme} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Tir</span>
+        <select name="attr_tir"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_tir" value="&{template:default} {{name=Jet Tir}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{tir}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{tir} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Furtivité</span>
+        <select name="attr_furtivite"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_furtivite" value="&{template:default} {{name=Jet Furtivité}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{furtivite}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{furtivite} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Conduite</span>
+        <select name="attr_conduite"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_conduite" value="&{template:default} {{name=Jet Conduite}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{conduite}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{conduite} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Larcin</span>
+        <select name="attr_larcin"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_larcin" value="&{template:default} {{name=Jet Larcin}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{larcin}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{larcin} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Mêlée</span>
+        <select name="attr_melee"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_melee" value="&{template:default} {{name=Jet Mêlée}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{melee}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{melee} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Survie</span>
+        <select name="attr_survie"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_survie" value="&{template:default} {{name=Jet Survie}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{survie}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{survie} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Acrobatie</span>
+        <select name="attr_acrobatie"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_acrobatie" value="&{template:default} {{name=Jet Acrobatie}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{acrobatie}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{acrobatie} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+    </div>
+
+    <!-- ===== Social ===== -->
+    <div class="skill-block competence-social">
+      <h3>Social</h3>
+
+      <div class="skill-row"><span>Animaux</span>
+        <select name="attr_animaux"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_animaux" value="&{template:default} {{name=Jet Animaux}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{animaux}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{animaux} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Commandement</span>
+        <select name="attr_commandement"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_commandement" value="&{template:default} {{name=Jet Commandement}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{commandement}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{commandement} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Empathie</span>
+        <select name="attr_empathie"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_empathie" value="&{template:default} {{name=Jet Empathie}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{empathie}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{empathie} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Étiquette</span>
+        <select name="attr_etiquette"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_etiquette" value="&{template:default} {{name=Jet Étiquette}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{etiquette}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{etiquette} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Expérience de la rue</span>
+        <select name="attr_exp_de_la_rue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_exp_de_la_rue" value="&{template:default} {{name=Jet Expérience de la rue}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{exp_de_la_rue}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{exp_de_la_rue} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Intimidation</span>
+        <select name="attr_intimidation"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_intimidation" value="&{template:default} {{name=Jet Intimidation}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{intimidation}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{intimidation} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Persuasion</span>
+        <select name="attr_persuasion"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_persuasion" value="&{template:default} {{name=Jet Persuasion}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{persuasion}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{persuasion} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Représentation</span>
+        <select name="attr_representation"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_representation" value="&{template:default} {{name=Jet Représentation}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{representation}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{representation} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Subterfuge</span>
+        <select name="attr_subterfuge"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_subterfuge" value="&{template:default} {{name=Jet Subterfuge}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{subterfuge}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{subterfuge} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+    </div>
+
+    <!-- ===== Mental ===== -->
+    <div class="skill-block competence-mental">
+      <h3>Mental</h3>
+
+      <div class="skill-row"><span>Érudition</span>
+        <select name="attr_erudition"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_erudition" value="&{template:default} {{name=Jet Érudition}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{erudition}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{erudition} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Investigation</span>
+        <select name="attr_investigation"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_investigation" value="&{template:default} {{name=Jet Investigation}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{investigation}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{investigation} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Médecine</span>
+        <select name="attr_medecine"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_medecine" value="&{template:default} {{name=Jet Médecine}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{medecine}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{medecine} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Sciences</span>
+        <select name="attr_sciences"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_sciences" value="&{template:default} {{name=Jet Sciences}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{sciences}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{sciences} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Technologie</span>
+        <select name="attr_technologie"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_technologie" value="&{template:default} {{name=Jet Technologie}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{technologie}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{technologie} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Vigilance</span>
+        <select name="attr_vigilance"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_vigilance" value="&{template:default} {{name=Jet Vigilance}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{vigilance}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{vigilance} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Finances</span>
+        <select name="attr_finances"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_finances" value="&{template:default} {{name=Jet Finances}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{finances}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{finances} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Arcanes</span>
+        <select name="attr_arcanes"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_arcanes" value="&{template:default} {{name=Jet Arcanes}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{arcanes}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{arcanes} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+
+      <div class="skill-row"><span>Politique</span>
+        <select name="attr_politique"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <button type="roll" name="roll_politique" value="&{template:default} {{name=Jet Politique}} {{personnage=@{character_name}}} {{Attribut=@{q_attr_val}}} {{Compétence=@{politique}}} {{Maîtrise=@{bonus_maitrise}}} {{Bonus=@{bonus_temporaire}}} {{Total=[[1d10 + @{politique} + @{bonus_maitrise} + @{bonus_temporaire} + @{q_attr_val}]]}}"></button>
+      </div>
+    </div>
+  </div><!-- /section-competences -->
+
+    <!-- ==================== AVANTAGES / HANDICAPS (nouvelle version) ==================== -->
+    <div class="sheet-adv-hand-grid">
+    
+      <!-- Avantages -->
+      <div class="sheet-block" id="blk-avantages">
+        <div class="blk-title">AVANTAGES</div>
+    
+        <div class="advhand-head">
+          <div>Avantage</div>
+          <div>Effets</div>
+        </div>
+    
+        <fieldset class="repeating_avantages">
+          <div class="advhand-row">
+            <input type="text" name="attr_avantage_nom"     placeholder="Nom de l’avantage">
+            <input type="text" name="attr_avantage_effets"  placeholder="Effet / règle / note">
+          </div>
+        </fieldset>
+      </div>
+    
+      <!-- Handicaps -->
+      <div class="sheet-block" id="blk-handicaps">
+        <div class="blk-title">HANDICAPS</div>
+    
+        <div class="advhand-head">
+          <div>Handicap</div>
+          <div>Effets</div>
+        </div>
+    
+        <fieldset class="repeating_handicaps">
+          <div class="advhand-row">
+            <input type="text" name="attr_handicap_nom"    placeholder="Nom du handicap">
+            <input type="text" name="attr_handicap_effets" placeholder="Effet / contrainte / note">
+          </div>
+        </fieldset>
+      </div>
+
+</div>
+
+
+</div><!-- /charsheet -->
