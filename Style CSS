@@ -21,14 +21,22 @@
 }
 
 /* === En-tête + stats === */
-.charsheet .sheet-infos,
+/* Premier bloc (Nom, Classe, etc.) */
+.charsheet .sheet-infos input,
+.charsheet .sheet-infos select {
+  color: #cfcfcf; background: #020202;
+}
+.charsheet .sheet-infos {
+  background:#0c0c0c; color: #4a5568; border:1px solid var(--line); border-radius:8px; padding:10px; margin:12px 0;
+}
 .charsheet .sheet-stats-container{
   background:#a1a1a1; border:1px solid var(--line); border-radius:8px; padding:10px; margin:12px 0;
 }
 .charsheet .sheet-ligne{ display:flex; flex-wrap:wrap; gap:12px; }
 .charsheet .sheet-ligne > label{ flex:1 1 200px; }
 .charsheet .sheet-stats-container{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.charsheet .sheet-stats-block label{ display:block; margin:6px 0; }
+/* === Bloc servant à modifier l'écriture du deuxième bloc avec PV + CA === */
+.charsheet .sheet-stats-block label{ display:block; margin:6px 0; color: #020202;}
 
 /* === Titres de sections (bandes rouges) === */
 .charsheet .section-title{
